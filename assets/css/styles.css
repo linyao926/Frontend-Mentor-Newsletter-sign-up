@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --primary-color: hsl(4, 100%, 67%);
+    --primary-color: #ff6257;
     --dark-slate-grey: hsl(234, 29%, 20%);
     --charcoal-grey: hsl(235, 18%, 26%);
     --grey: hsl(231, 7%, 60%);
@@ -22,37 +22,223 @@ body {
 
 .container {
     width: 100%;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 13vw 0;
+    padding: 8em 0;
+    position: relative;
 }
 
 .sign-up-box {
-    width: 70%;
-    height: 80vh;
+    width: 77%;
+    min-width: 778px;
+    min-height: 523px;
+    height: max-content;
     background-color: var(--white);
     border-radius: 25px;
     color: var(--dark-slate-grey);
     display: flex;
     align-items: center;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 1.5em;
+    visibility: visible;
+    transition: all 0.4s;
+}
+
+.sign-up-content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1.5em;
 }
 
 .sign-up-form {
-    width: 60%;
+    width: 70%;
+    min-width: 320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 0.6em;
+}
+
+.list {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    list-style-type: none;
+}
+
+.list-item {
+    margin-bottom: 1em;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.list-item::before {
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.3125em;
+	height: 1.3125em;
+    background: url("/assets/images/icon-list.svg") no-repeat;
+}
+
+.list-item-text {
+    margin-left: 2.125em;
+}
+
+form {
+    width: 100%;
+    display: block;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+.error-text {
+    visibility: hidden;
+    color: var(--primary-color);
+    font-size: 12px;
+    opacity: 0;
+}
+
+.error {
+    color: var(--primary-color);
+    transition: all 0.4s;
+}
+
+.error.error-text {
+    visibility: visible;
+    transition: all 0.4s;
+    opacity: 1;
+}
+
+input {
+    padding: 1em 1em;
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    outline: none;
+    transition: all 0.4s;
+    width: 100%;
+}
+
+input.error {
+    background-color: #ffe8e6;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+input:focus,
+input:focus-visible {
+    border: 1px solid var(--dark-slate-grey);
+}
+
+input::placeholder {
+    color: var(--dark-slate-grey);
+}
+
+.error:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.error::placeholder {
+    color: var(--primary-color);
+}
+
+.btn {
+    background: var(--dark-slate-grey);
+    padding: 1.075em 1.375em;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1.8em;
+    width: 100%;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,83,120,1) 0%, rgba(255,98,87,1) 100%);
+    transition: all 0.4s;
+}
+
+.sign-up-illustration {
+    width: 40%;
+    min-width: 320px;
+    height: auto;
 }
 
 .success-message-box {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    width: 30%;
+    min-width: 400px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--dark-slate-grey);
+    padding: 2.5em 2.5em;
+}
+
+.success-message-box h2 {
+    margin-top: 0.6em;
+    font-size: 2.5rem;
+}
+
+.success-message-box p {
+    margin-bottom: 0.5em;
+}
+
+.success-icon {
+    width: 46px;
+    height: 46px;
+}
+
+.container.success {
+    padding: 0;
+}
+
+.sign-up-box.success {
+    visibility: hidden;
+}
+
+.success-message-box.success {
+    visibility: visible;
 }
 
 .attribution { 
-    font-size: 11px; 
+    font-size: 12px; 
     text-align: center; 
     color: white; 
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .attribution a { 
-    color: white; 
+    color: var(--primary-color);
+    margin-left: 4px;
+    text-decoration: none;
 }
