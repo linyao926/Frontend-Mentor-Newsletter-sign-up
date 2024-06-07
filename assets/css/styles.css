@@ -18,6 +18,8 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     background-color: var(--dark-slate-grey);
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .container {
@@ -44,6 +46,10 @@ body {
     padding: 1.5em;
     visibility: visible;
     opacity: 1;
+}
+
+.sign-up-illustration-mobile {
+    display: none;
 }
 
 .sign-up-content {
@@ -217,6 +223,7 @@ input::placeholder {
 
 .container.success {
     padding: 0;
+    height: 100vh;
 }
 
 .sign-up-box.success {
