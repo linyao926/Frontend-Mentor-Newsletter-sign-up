@@ -94,7 +94,7 @@ h2 {
 	top: 0;
 	width: 1.3125em;
 	height: 1.3125em;
-    background: url("/assets/images/icon-list.svg") no-repeat;
+    background: url("./assets/images/icon-list.svg") no-repeat;
 }
 
 .list-item-text {
